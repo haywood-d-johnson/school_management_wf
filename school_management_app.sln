@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "school_management_app", "school_management_app.csproj", "{0184B84B-0531-40BD-9D46-6F5935549514}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "group_a_school_management", "..\group_a_school_management\group_a_school_management.vdproj", "{9BB81484-88C9-44FF-9238-DC6640FA505F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0184B84B-0531-40BD-9D46-6F5935549514}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0184B84B-0531-40BD-9D46-6F5935549514}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0184B84B-0531-40BD-9D46-6F5935549514}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0184B84B-0531-40BD-9D46-6F5935549514}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BB81484-88C9-44FF-9238-DC6640FA505F}.Debug|Any CPU.ActiveCfg = Debug
+		{9BB81484-88C9-44FF-9238-DC6640FA505F}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1667CFF0-6D35-4D45-88F8-2AD28E282D7B}
+	EndGlobalSection
+EndGlobal

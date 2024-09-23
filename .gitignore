@@ -1,0 +1,25 @@
+# Windows Visual Studio specific
+*.suo
+*.user
+*.vshost.exe
+*.webinfo
+*.db
+*.pdb
+*.cache
+*.log
+*.bak
+*.tmp
+*.swp
+
+# Visual Studio cache/build files
+bin/
+obj/
+
+# NuGet package files
+packages/
+
+# Temporary files
+*.vshost.exe.exe
+*.vhost.exe.exe
+*.vhost.exe.exe.exe
+*.vhost.exe.exe.exe.exe
