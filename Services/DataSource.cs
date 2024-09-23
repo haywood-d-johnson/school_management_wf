@@ -5,6 +5,7 @@ using System.Linq;
 using System.Data;
 using System.Windows;
 using System.Configuration;
+using school_management_app.Services.Interfaces;
 
 namespace school_management_app.Services
 {
@@ -14,8 +15,6 @@ namespace school_management_app.Services
         private static MySqlCommand _command;
         private static DataTable dt;
         private static MySqlDataReader _reader;
-
-
 
         public static void EstablishConnection()
         {
@@ -107,7 +106,11 @@ namespace school_management_app.Services
         {
             List<T> result = new List<T>();
 
-            _connection.Open();
+            if (_connection.State !=  ConnectionState.Open)
+            {
+                _connection.Open();
+
+            }
 
             using (MySqlCommand command = new MySqlCommand(query, _connection))
             {

@@ -9,7 +9,7 @@ namespace school_management_app.Models
 {
     public class ResponseModel
     {
-        string MESSAGE { get; set; }
-        string STATUS { get; set; }
+        public String MESSAGE { get; set; }
+        public String STATUS { get; set; }
     }
 }

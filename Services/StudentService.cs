@@ -37,7 +37,6 @@ namespace school_management_app.Services
         public StudentModel FindOne(StudentModel student)
         {
             throw new NotImplementedException();
-
         }
 
         public List<StudentInfo> ShowStudentInfo()

@@ -10,7 +10,7 @@ using System.Xml;
 
 namespace school_management_app.Models
 {
-    public class UserModel
+    public class UserModel : ResponseModel
     {
         public int USER_ID { get; set; }
         public String FIRST_NAME {get; set;}

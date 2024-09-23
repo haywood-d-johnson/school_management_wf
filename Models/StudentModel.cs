@@ -5,8 +5,8 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
 
 namespace school_management_app.Models
-{ 
-    public class StudentModel 
+{
+    public class StudentModel
     { 
         public int STUDENT_ID { get; set; }
         public int USER_ID { get; set; }

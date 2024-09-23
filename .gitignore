@@ -10,6 +10,8 @@
 *.bak
 *.tmp
 *.swp
+*.vs
+*.vsidx
 
 # Visual Studio cache/build files
 bin/

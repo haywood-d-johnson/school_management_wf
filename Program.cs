@@ -16,7 +16,7 @@ namespace school_management_app
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Views.StudentView());
+            Application.Run(new Views.LoginView());
         }
     }
 }

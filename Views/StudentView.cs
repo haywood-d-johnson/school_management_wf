@@ -19,20 +19,24 @@ namespace school_management_app.Views
     {
         private readonly IStudentRepository _studentService;
         private readonly ICommonRepository _commonService;
+        private readonly IUserRepository _userService;
 
         private DataTable _studentsDT;
 
-        public StudentView()
+        public StudentView(UserModel user)
         {
             InitializeComponent();
+
             _studentService = new StudentService();
             _commonService = new CommonService();
-
-            DataSource.EstablishConnection();
+            _userService = new UserService();
         }
 
         private void StudentView_Load(object sender, EventArgs e)
         {
+            // should conditionally render by user.role. Seacher can see students/students cannot see teachers.
+            DataSource.EstablishConnection();
+
             List<StudentInfo> studentList = _studentService.ShowStudentInfo();
             _studentsDT = _commonService.ConvertListToDataTable(studentList);
 
