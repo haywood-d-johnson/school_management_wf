@@ -15,5 +15,12 @@ namespace school_management_app.Services
             public static String Success = "SUCCESS";
             public static String Error = "ERROR";
         }
+
+        public static class UserRolesConstants
+        {
+            public static String Student = "STUDENT";
+            public static String Admin = "ADMINISTRATOR";
+            public static String Teacher = "TEACHER";
+        }
     }
 }

@@ -8,6 +8,8 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using System.IO;
+using school_management_app.Models;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace school_management_app.Services
 {
@@ -15,6 +17,10 @@ namespace school_management_app.Services
     {
         private static readonly byte[] _salt = new byte[] { 0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF };
         private static readonly int _iterations = 10000;
+
+        // Form Colors DNU
+        private String EbonyClay = "#25283B";
+        private String Pizazz = "#FF8F00";
 
         public DataTable ConvertListToDataTable<T>(List<T> list)
         {
@@ -77,7 +83,6 @@ namespace school_management_app.Services
         }
 
         public String Decrypt(string cipherText)
-
         {
             byte[] cipherBytes = Convert.FromBase64String(cipherText);
 
@@ -107,6 +112,29 @@ namespace school_management_app.Services
                     }
                 }
             }
+        }
+
+        public String GenerateUserGreeting(UserModel user)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            int hour = DateTime.Now.Hour;
+
+            string greeting;
+            if (hour < 12)
+            {
+                greeting = "GOOD MORNING";
+            }
+            else if (hour < 17)
+            {
+                greeting = "GOOD AFTERNOON";
+            }
+            else
+            {
+                greeting = "GOOD EVENING";
+            }
+
+            return $"{greeting}, {user.FIRST_NAME} {user.LAST_NAME}!";
         }
     }
 }

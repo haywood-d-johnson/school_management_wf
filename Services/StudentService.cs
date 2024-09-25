@@ -57,6 +57,17 @@ namespace school_management_app.Services
             throw new NotImplementedException();
         }
 
+        public StudentModel GetStudentModelFromUserID(UserModel user)
+        {
+            StudentModel studentModel = new StudentModel();
 
+            String queryString = "SELECT * FROM SCHOOLMANAGEMENT.STUDENTS STU WHERE STU.USER_ID = '{0}'";
+
+            String query = String.Format(queryString, user.USER_ID);
+
+            List<StudentModel> ResStudentList = _dataSource.ExecuteQueryAndConvertToList<StudentModel>(query);
+            
+            return ResStudentList.FirstOrDefault();
+        }
     }
 }

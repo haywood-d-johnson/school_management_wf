@@ -62,10 +62,24 @@ namespace school_management_app.Views
                 tbxLoginPassword.Text = String.Empty;
             }
             else 
-            { 
-                StudentView studentView = new StudentView(ReturnedUser);
-                studentView.ShowDialog();
+            {
                 this.Hide();
+
+                if (ReturnedUser.ROLES == EnumService.UserRolesConstants.Student) 
+                {
+                    MainMenuStudentView mainMenuStudentView = new MainMenuStudentView(ReturnedUser);
+                    mainMenuStudentView.ShowDialog();
+                }
+                if (user.ROLES == EnumService.UserRolesConstants.Teacher)
+                {
+                    MainMenuTeacherView mainMenuTeacherView = new MainMenuTeacherView(ReturnedUser);
+                    mainMenuTeacherView.ShowDialog();
+                }
+                if (user.ROLES == EnumService.UserRolesConstants.Admin)
+                {
+                    MainMenuAdminView mainMenuAdminView = new MainMenuAdminView(ReturnedUser);
+                    mainMenuAdminView.ShowDialog();
+                }
             }
         }
     }
