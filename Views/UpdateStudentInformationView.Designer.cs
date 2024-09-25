@@ -38,6 +38,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UpdateStudentInformationView";
             this.Text = "UpdateStudentInformationView";
+            this.Load += new System.EventHandler(this.UpdateStudentInformationView_Load);
             this.ResumeLayout(false);
 
         }

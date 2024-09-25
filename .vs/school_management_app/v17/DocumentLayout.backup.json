@@ -3,36 +3,20 @@
   "WorkspaceRootPath": "D:\\Documents\\DEV\\school_management\\school_management_app\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0184B84B-0531-40BD-9D46-6F5935549514}|school_management_app.csproj|d:\\documents\\dev\\school_management\\school_management_app\\views\\mainmenustudentview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0184B84B-0531-40BD-9D46-6F5935549514}|school_management_app.csproj|solutionrelative:views\\mainmenustudentview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0184B84B-0531-40BD-9D46-6F5935549514}|school_management_app.csproj|d:\\documents\\dev\\school_management\\school_management_app\\views\\mainmenustudentview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{0184B84B-0531-40BD-9D46-6F5935549514}|school_management_app.csproj|solutionrelative:views\\mainmenustudentview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{0184B84B-0531-40BD-9D46-6F5935549514}|school_management_app.csproj|d:\\documents\\dev\\school_management\\school_management_app\\views\\updatestudentinformationview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0184B84B-0531-40BD-9D46-6F5935549514}|school_management_app.csproj|solutionrelative:views\\updatestudentinformationview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0184B84B-0531-40BD-9D46-6F5935549514}|school_management_app.csproj|d:\\documents\\dev\\school_management\\school_management_app\\views\\updatestudentinformationview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{0184B84B-0531-40BD-9D46-6F5935549514}|school_management_app.csproj|solutionrelative:views\\updatestudentinformationview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0184B84B-0531-40BD-9D46-6F5935549514}|school_management_app.csproj|d:\\documents\\dev\\school_management\\school_management_app\\views\\studentclassview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{0184B84B-0531-40BD-9D46-6F5935549514}|school_management_app.csproj|solutionrelative:views\\studentclassview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{0184B84B-0531-40BD-9D46-6F5935549514}|school_management_app.csproj|d:\\documents\\dev\\school_management\\school_management_app\\services\\addressservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0184B84B-0531-40BD-9D46-6F5935549514}|school_management_app.csproj|solutionrelative:services\\addressservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0184B84B-0531-40BD-9D46-6F5935549514}|school_management_app.csproj|d:\\documents\\dev\\school_management\\school_management_app\\views\\studentclassview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0184B84B-0531-40BD-9D46-6F5935549514}|school_management_app.csproj|solutionrelative:views\\studentclassview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0184B84B-0531-40BD-9D46-6F5935549514}|school_management_app.csproj|d:\\documents\\dev\\school_management\\school_management_app\\views\\studentview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0184B84B-0531-40BD-9D46-6F5935549514}|school_management_app.csproj|solutionrelative:views\\studentview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0184B84B-0531-40BD-9D46-6F5935549514}|school_management_app.csproj|d:\\documents\\dev\\school_management\\school_management_app\\services\\studentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0184B84B-0531-40BD-9D46-6F5935549514}|school_management_app.csproj|solutionrelative:services\\studentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0184B84B-0531-40BD-9D46-6F5935549514}|school_management_app.csproj|d:\\documents\\dev\\school_management\\school_management_app\\views\\studentview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{0184B84B-0531-40BD-9D46-6F5935549514}|school_management_app.csproj|solutionrelative:views\\studentview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{0184B84B-0531-40BD-9D46-6F5935549514}|school_management_app.csproj|d:\\documents\\dev\\school_management\\school_management_app\\services\\interfaces\\iaddressrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0184B84B-0531-40BD-9D46-6F5935549514}|school_management_app.csproj|solutionrelative:services\\interfaces\\iaddressrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,102 +34,53 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AddressService.cs",
+              "DocumentMoniker": "D:\\Documents\\DEV\\school_management\\school_management_app\\Services\\AddressService.cs",
+              "RelativeDocumentMoniker": "Services\\AddressService.cs",
+              "ToolTip": "D:\\Documents\\DEV\\school_management\\school_management_app\\Services\\AddressService.cs",
+              "RelativeToolTip": "Services\\AddressService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T05:58:04.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "StudentClassView.cs [Design]",
-              "DocumentMoniker": "D:\\Documents\\DEV\\school_management\\school_management_app\\Views\\StudentClassView.cs",
-              "RelativeDocumentMoniker": "Views\\StudentClassView.cs",
-              "ToolTip": "D:\\Documents\\DEV\\school_management\\school_management_app\\Views\\StudentClassView.cs [Design]",
-              "RelativeToolTip": "Views\\StudentClassView.cs [Design]",
+              "Title": "IAddressRepository.cs",
+              "DocumentMoniker": "D:\\Documents\\DEV\\school_management\\school_management_app\\Services\\Interfaces\\IAddressRepository.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IAddressRepository.cs",
+              "ToolTip": "D:\\Documents\\DEV\\school_management\\school_management_app\\Services\\Interfaces\\IAddressRepository.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IAddressRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T05:11:57.415Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "StudentService.cs",
-              "DocumentMoniker": "D:\\Documents\\DEV\\school_management\\school_management_app\\Services\\StudentService.cs",
-              "RelativeDocumentMoniker": "Services\\StudentService.cs",
-              "ToolTip": "D:\\Documents\\DEV\\school_management\\school_management_app\\Services\\StudentService.cs",
-              "RelativeToolTip": "Services\\StudentService.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAAAFMAAABOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T05:11:00.416Z",
+              "WhenOpened": "2024-09-25T05:50:41.019Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "StudentClassView.cs",
-              "DocumentMoniker": "D:\\Documents\\DEV\\school_management\\school_management_app\\Views\\StudentClassView.cs",
-              "RelativeDocumentMoniker": "Views\\StudentClassView.cs",
-              "ToolTip": "D:\\Documents\\DEV\\school_management\\school_management_app\\Views\\StudentClassView.cs",
-              "RelativeToolTip": "Views\\StudentClassView.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAqwC8AAABSAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "UpdateStudentInformationView.cs",
+              "DocumentMoniker": "D:\\Documents\\DEV\\school_management\\school_management_app\\Views\\UpdateStudentInformationView.cs",
+              "RelativeDocumentMoniker": "Views\\UpdateStudentInformationView.cs",
+              "ToolTip": "D:\\Documents\\DEV\\school_management\\school_management_app\\Views\\UpdateStudentInformationView.cs",
+              "RelativeToolTip": "Views\\UpdateStudentInformationView.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAADwvyAAAABUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T05:11:00.422Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "StudentView.cs",
-              "DocumentMoniker": "D:\\Documents\\DEV\\school_management\\school_management_app\\Views\\StudentView.cs",
-              "RelativeDocumentMoniker": "Views\\StudentView.cs",
-              "ToolTip": "D:\\Documents\\DEV\\school_management\\school_management_app\\Views\\StudentView.cs",
-              "RelativeToolTip": "Views\\StudentView.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACoAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T05:17:58.878Z",
+              "WhenOpened": "2024-09-25T05:48:32.898Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MainMenuStudentView.cs [Design]",
-              "DocumentMoniker": "D:\\Documents\\DEV\\school_management\\school_management_app\\Views\\MainMenuStudentView.cs",
-              "RelativeDocumentMoniker": "Views\\MainMenuStudentView.cs",
-              "ToolTip": "D:\\Documents\\DEV\\school_management\\school_management_app\\Views\\MainMenuStudentView.cs [Design]",
-              "RelativeToolTip": "Views\\MainMenuStudentView.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T05:09:10.423Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainMenuStudentView.cs",
-              "DocumentMoniker": "D:\\Documents\\DEV\\school_management\\school_management_app\\Views\\MainMenuStudentView.cs",
-              "RelativeDocumentMoniker": "Views\\MainMenuStudentView.cs",
-              "ToolTip": "D:\\Documents\\DEV\\school_management\\school_management_app\\Views\\MainMenuStudentView.cs",
-              "RelativeToolTip": "Views\\MainMenuStudentView.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAAwFwAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T05:12:38.448Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "UpdateStudentInformationView.cs [Design]",
               "DocumentMoniker": "D:\\Documents\\DEV\\school_management\\school_management_app\\Views\\UpdateStudentInformationView.cs",
               "RelativeDocumentMoniker": "Views\\UpdateStudentInformationView.cs",
               "ToolTip": "D:\\Documents\\DEV\\school_management\\school_management_app\\Views\\UpdateStudentInformationView.cs [Design]",
               "RelativeToolTip": "Views\\UpdateStudentInformationView.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T05:12:09.052Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "StudentView.cs [Design]",
-              "DocumentMoniker": "D:\\Documents\\DEV\\school_management\\school_management_app\\Views\\StudentView.cs",
-              "RelativeDocumentMoniker": "Views\\StudentView.cs",
-              "ToolTip": "D:\\Documents\\DEV\\school_management\\school_management_app\\Views\\StudentView.cs [Design]",
-              "RelativeToolTip": "Views\\StudentView.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T05:17:56.25Z",
+              "WhenOpened": "2024-09-25T05:48:31.731Z",
               "EditorCaption": " [Design]"
             }
           ]
