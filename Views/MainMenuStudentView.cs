@@ -48,7 +48,7 @@ namespace school_management_app.Views
             if (this.pnlFormView.Controls.Count > 0)
                 this.pnlFormView.Controls.RemoveAt(0);
 
-            StudentClassView studentClassView = new StudentClassView();
+            StudentClassView studentClassView = new StudentClassView(_userModel);
 
             studentClassView.TopLevel = false;
             studentClassView.AutoScroll = true;
@@ -61,12 +61,25 @@ namespace school_management_app.Views
             if (this.pnlFormView.Controls.Count > 0)
                 this.pnlFormView.Controls.RemoveAt(0);
 
-            UpdateStudentInformationView updateStudentInformationView = new UpdateStudentInformationView();
+            UpdateStudentInformationView updateStudentInformationView = new UpdateStudentInformationView(_userModel);
 
             updateStudentInformationView.TopLevel = false;
             updateStudentInformationView.AutoScroll = true;
             this.pnlFormView.Controls.Add(updateStudentInformationView);
             updateStudentInformationView.Show();
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to log out? ", "Exit Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+            if (result == DialogResult.OK)
+            {
+                LoginView loginView = new LoginView();
+
+                this.Close();
+                loginView.Show();
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using school_management_app.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,13 @@ namespace school_management_app.Views
 {
     public partial class StudentClassView : Form
     {
-        public StudentClassView()
+        private readonly UserModel _userModel;
+
+        public StudentClassView(UserModel user)
         {
             InitializeComponent();
+
+            _userModel = user;
         }
     }
 }

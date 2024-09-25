@@ -35,6 +35,7 @@
             this.btnViewStuInfo = new System.Windows.Forms.Button();
             this.pnlFormView = new System.Windows.Forms.Panel();
             this.pnlTopBar = new System.Windows.Forms.Panel();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblDsgnBar
@@ -112,12 +113,26 @@
             this.pnlTopBar.Size = new System.Drawing.Size(814, 25);
             this.pnlTopBar.TabIndex = 7;
             // 
+            // btnLogOut
+            // 
+            this.btnLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(143)))), ((int)(((byte)(0)))));
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F);
+            this.btnLogOut.Location = new System.Drawing.Point(50, 450);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(75, 23);
+            this.btnLogOut.TabIndex = 8;
+            this.btnLogOut.Text = "&Log Out";
+            this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
             // MainMenuStudentView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(40)))), ((int)(((byte)(59)))));
             this.ClientSize = new System.Drawing.Size(814, 485);
+            this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.lblUStatus);
             this.Controls.Add(this.pnlTopBar);
@@ -143,5 +158,6 @@
         private System.Windows.Forms.Button btnViewStuInfo;
         private System.Windows.Forms.Panel pnlFormView;
         private System.Windows.Forms.Panel pnlTopBar;
+        private System.Windows.Forms.Button btnLogOut;
     }
 }
