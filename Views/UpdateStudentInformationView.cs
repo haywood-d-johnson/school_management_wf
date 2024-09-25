@@ -14,11 +14,14 @@ namespace school_management_app.Views
     public partial class UpdateStudentInformationView : Form
     {
         private readonly UserModel _userModel;
-        public UpdateStudentInformationView(UserModel user)
+        private readonly StudentModel _studentModel;
+
+        public UpdateStudentInformationView(UserModel user, StudentModel studentModel)
         {
             InitializeComponent();
 
             _userModel = user;
+            _studentModel = studentModel;
         }
     }
 }

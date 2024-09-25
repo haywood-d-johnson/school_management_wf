@@ -14,7 +14,7 @@ namespace school_management_app.Models
     {
         public int USER_ID { get; set; }
         public String FIRST_NAME {get; set;}
-        public String LAST_NAME { get; set;}
+        public String LAST_NAME { get; set; }
         public String EMAIL { get; set;}
         public String PHONE_NUMBER { get; set;}    
         public DateTime DATE_OF_BIRTH { get; set;}

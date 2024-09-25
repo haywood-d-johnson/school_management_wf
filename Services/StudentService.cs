@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace school_management_app.Services
 {
@@ -68,6 +69,23 @@ namespace school_management_app.Services
             List<StudentModel> ResStudentList = _dataSource.ExecuteQueryAndConvertToList<StudentModel>(query);
             
             return ResStudentList.FirstOrDefault();
+        }
+
+        public List<StudentClassInfo> GetStudentClassInfo(StudentModel student)
+        {
+            StringBuilder queryString = new StringBuilder();
+            queryString.Append("SELECT s.SUBJECT_NAME, u.LAST_NAME AS TEACHER, sp.GRADE, c.ROOM_NUMBER, ca.ALLOCATION_DATE ");
+            queryString.Append("FROM SCHOOLMANAGEMENT.STUDENT_PERFORMANCE sp ");
+            queryString.Append("JOIN SCHOOLMANAGEMENT.SUBJECTS s ON s.SUBJECT_ID = sp.SUBJECT_ID ");
+            queryString.Append("JOIN SCHOOLMANAGEMENT.CLASSROOM_ALLOCATION ca ON ca.STUDENT_ID = sp.STUDENT_ID ");
+            queryString.Append("JOIN SCHOOLMANAGEMENT.CLASSROOM c ON c.CLASSROOM_ID = ca.CLASSROOM_ID ");
+            queryString.Append("JOIN SCHOOLMANAGEMENT.TEACHERS t ON t.TEACHER_ID = c.ASSIGNED_TEACHER_ID ");
+            queryString.Append("JOIN SCHOOLMANAGEMENT.USERS u ON u.USER_ID = t.USER_ID ");
+            queryString.Append($"WHERE sp.STUDENT_ID = {student.STUDENT_ID}");
+
+            List<StudentClassInfo> ResClassInfo = _dataSource.ExecuteQueryAndConvertToList<StudentClassInfo>(queryString.ToString());
+
+            return ResClassInfo;
         }
     }
 }

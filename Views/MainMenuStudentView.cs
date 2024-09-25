@@ -20,6 +20,7 @@ namespace school_management_app.Views
         private readonly ICommonRepository _commonService;
 
         private readonly UserModel _userModel;
+        private readonly StudentModel _studentModel;
 
         public MainMenuStudentView(UserModel user)
         {
@@ -31,7 +32,7 @@ namespace school_management_app.Views
 
             _userModel = user;
 
-            StudentModel studentModel = _studentService.GetStudentModelFromUserID(_userModel);
+            _studentModel = _studentService.GetStudentModelFromUserID(_userModel);
         }
 
         private void MainMenuStudentView_Load(object sender, EventArgs e)
@@ -48,7 +49,7 @@ namespace school_management_app.Views
             if (this.pnlFormView.Controls.Count > 0)
                 this.pnlFormView.Controls.RemoveAt(0);
 
-            StudentClassView studentClassView = new StudentClassView(_userModel);
+            StudentClassView studentClassView = new StudentClassView(_userModel, _studentModel);
 
             studentClassView.TopLevel = false;
             studentClassView.AutoScroll = true;
@@ -61,7 +62,7 @@ namespace school_management_app.Views
             if (this.pnlFormView.Controls.Count > 0)
                 this.pnlFormView.Controls.RemoveAt(0);
 
-            UpdateStudentInformationView updateStudentInformationView = new UpdateStudentInformationView(_userModel);
+            UpdateStudentInformationView updateStudentInformationView = new UpdateStudentInformationView(_userModel, _studentModel);
 
             updateStudentInformationView.TopLevel = false;
             updateStudentInformationView.AutoScroll = true;
@@ -71,7 +72,7 @@ namespace school_management_app.Views
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure you want to log out? ", "Exit Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Are you sure you want to log out? ", "Logout Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
             if (result == DialogResult.OK)
             {
@@ -79,6 +80,16 @@ namespace school_management_app.Views
 
                 this.Close();
                 loginView.Show();
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+            if (result == DialogResult.OK)
+            {
+                Application.Exit();
             }
         }
     }

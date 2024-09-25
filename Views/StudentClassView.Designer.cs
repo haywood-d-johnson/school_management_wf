@@ -28,33 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.StudentClassesDGV = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.StudentClassesDGV)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // StudentClassesDGV
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(177, 173);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(28, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Test";
+            this.StudentClassesDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.StudentClassesDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.StudentClassesDGV.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.StudentClassesDGV.Location = new System.Drawing.Point(0, 139);
+            this.StudentClassesDGV.Name = "StudentClassesDGV";
+            this.StudentClassesDGV.RowHeadersVisible = false;
+            this.StudentClassesDGV.Size = new System.Drawing.Size(626, 346);
+            this.StudentClassesDGV.TabIndex = 1;
             // 
             // StudentClassView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(621, 483);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(626, 485);
+            this.Controls.Add(this.StudentClassesDGV);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "StudentClassView";
+            this.Load += new System.EventHandler(this.StudentClassView_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.StudentClassesDGV)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView StudentClassesDGV;
     }
 }

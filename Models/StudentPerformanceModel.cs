@@ -14,4 +14,6 @@ namespace school_management_app.Models
         public Char GRADE { get; set; }
         public int EXAM_DATE { get; set; }
     }
+
+
 }

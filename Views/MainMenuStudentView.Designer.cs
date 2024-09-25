@@ -36,6 +36,7 @@
             this.pnlFormView = new System.Windows.Forms.Panel();
             this.pnlTopBar = new System.Windows.Forms.Panel();
             this.btnLogOut = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblDsgnBar
@@ -75,10 +76,11 @@
             // btnViewClasses
             // 
             this.btnViewClasses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(143)))), ((int)(((byte)(0)))));
+            this.btnViewClasses.FlatAppearance.BorderSize = 0;
             this.btnViewClasses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewClasses.Location = new System.Drawing.Point(0, 177);
             this.btnViewClasses.Name = "btnViewClasses";
-            this.btnViewClasses.Size = new System.Drawing.Size(192, 48);
+            this.btnViewClasses.Size = new System.Drawing.Size(188, 48);
             this.btnViewClasses.TabIndex = 0;
             this.btnViewClasses.Text = "VIEW CLASSES";
             this.btnViewClasses.UseVisualStyleBackColor = false;
@@ -87,10 +89,11 @@
             // btnViewStuInfo
             // 
             this.btnViewStuInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(143)))), ((int)(((byte)(0)))));
+            this.btnViewStuInfo.FlatAppearance.BorderSize = 0;
             this.btnViewStuInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnViewStuInfo.Location = new System.Drawing.Point(0, 241);
+            this.btnViewStuInfo.Location = new System.Drawing.Point(0, 228);
             this.btnViewStuInfo.Name = "btnViewStuInfo";
-            this.btnViewStuInfo.Size = new System.Drawing.Size(192, 48);
+            this.btnViewStuInfo.Size = new System.Drawing.Size(188, 48);
             this.btnViewStuInfo.TabIndex = 4;
             this.btnViewStuInfo.Text = "VIEW STUDENT INFORMATION";
             this.btnViewStuInfo.UseVisualStyleBackColor = false;
@@ -99,15 +102,15 @@
             // pnlFormView
             // 
             this.pnlFormView.BackColor = System.Drawing.Color.White;
-            this.pnlFormView.Location = new System.Drawing.Point(192, -4);
+            this.pnlFormView.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlFormView.Location = new System.Drawing.Point(188, 0);
             this.pnlFormView.Name = "pnlFormView";
-            this.pnlFormView.Size = new System.Drawing.Size(626, 492);
+            this.pnlFormView.Size = new System.Drawing.Size(626, 485);
             this.pnlFormView.TabIndex = 5;
             // 
             // pnlTopBar
             // 
             this.pnlTopBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(143)))), ((int)(((byte)(0)))));
-            this.pnlTopBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTopBar.Location = new System.Drawing.Point(0, 0);
             this.pnlTopBar.Name = "pnlTopBar";
             this.pnlTopBar.Size = new System.Drawing.Size(814, 25);
@@ -118,7 +121,7 @@
             this.btnLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(143)))), ((int)(((byte)(0)))));
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F);
-            this.btnLogOut.Location = new System.Drawing.Point(50, 450);
+            this.btnLogOut.Location = new System.Drawing.Point(12, 450);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(75, 23);
             this.btnLogOut.TabIndex = 8;
@@ -126,16 +129,30 @@
             this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(143)))), ((int)(((byte)(0)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F);
+            this.btnClose.Location = new System.Drawing.Point(93, 450);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 9;
+            this.btnClose.Text = "&Close";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // MainMenuStudentView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(40)))), ((int)(((byte)(59)))));
             this.ClientSize = new System.Drawing.Size(814, 485);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.pnlTopBar);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.lblUStatus);
-            this.Controls.Add(this.pnlTopBar);
             this.Controls.Add(this.btnViewStuInfo);
             this.Controls.Add(this.btnViewClasses);
             this.Controls.Add(this.pnlFormView);
@@ -159,5 +176,6 @@
         private System.Windows.Forms.Panel pnlFormView;
         private System.Windows.Forms.Panel pnlTopBar;
         private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.Button btnClose;
     }
 }

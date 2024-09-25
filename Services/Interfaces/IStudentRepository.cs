@@ -16,5 +16,6 @@ namespace school_management_app.Services
         void Update(StudentModel student);
         void Delete(StudentModel student);
         StudentModel GetStudentModelFromUserID(UserModel user);
+        List<StudentClassInfo> GetStudentClassInfo(StudentModel student);
     }
 }
