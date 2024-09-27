@@ -154,8 +154,6 @@ namespace school_management_app.Views
             tbxCity.Enabled = false;
             tbxState.Text = _addressModel.STATE.ToString();
             tbxState.Enabled = false;
-            tbxPwd.Text = _commonService.Decrypt(_userModel.PASSWORD_HASH);
-            tbxPwd.Enabled = false;
         }
     }
 }

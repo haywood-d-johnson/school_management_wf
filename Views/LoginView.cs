@@ -17,6 +17,7 @@ namespace school_management_app.Views
     {
         private readonly ICommonRepository _commonService;
         private readonly IUserRepository _userService;
+        private DataSource _dataSource;
 
         public LoginView()
         {
@@ -44,7 +45,7 @@ namespace school_management_app.Views
         private void btnLoginOk_Click(object sender, EventArgs e)
         {
             String email = tbxLoginEmail.Text;
-            String password = _commonService.Encrypt(tbxLoginPassword.Text);
+            String password = tbxLoginPassword.Text;
 
             UserModel user = new UserModel()
             {

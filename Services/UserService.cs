@@ -13,32 +13,41 @@ namespace school_management_app.Services
     public class UserService : IUserRepository
     {
         private readonly DataSource _dataSource;
-
+        private readonly ICommonRepository _commonService;
         public UserService() 
         { 
             _dataSource = new DataSource();
+            _commonService = new CommonService();
         }
 
         public UserModel ValidateUserByEmailAndPassword(UserModel user)
         {
-            String queryString = "SELECT * FROM SCHOOLMANAGEMENT.USERS USR WHERE USR.EMAIL = '{0}' AND USR.PASSWORD_HASH = '{1}'";
 
-            String query = String.Format(queryString, user.EMAIL, user.PASSWORD_HASH);
+            String queryString = "SELECT * FROM SCHOOLMANAGEMENT.USERS USR WHERE USR.EMAIL = '{0}'";
+
+            String query = String.Format(queryString, user.EMAIL);
 
             List<UserModel> res = _dataSource.ExecuteQueryAndConvertToList<UserModel>(query.ToString());
 
             if (res.Count > 0) 
             { 
                 UserModel UserResponse = res.FirstOrDefault();
+                
+                if (_commonService.VerifyHashedPassword(UserResponse.PASSWORD_HASH, user.PASSWORD_HASH))
+                {
+                    UserResponse.RESPONSE_STATUS = EnumService.StatusConstants.Found;
+                    UserResponse.RESPONSE_MESSAGE = "User data found";
 
-                UserResponse.RESPONSE_STATUS = EnumService.StatusConstants.Found;
-                UserResponse.RESPONSE_MESSAGE = "User data found";
-
-                return UserResponse;    
+                    return UserResponse;
+                }
+                else
+                {
+                    return new UserModel() { RESPONSE_STATUS = EnumService.StatusConstants.NotFound, RESPONSE_MESSAGE = "Email/Password combination incorrect. Please Try again" };
+                }
             }
             else
             {
-                return new UserModel() {RESPONSE_STATUS = EnumService.StatusConstants.NotFound, RESPONSE_MESSAGE = "Email/Password combination incorrect. Please Try again" };
+                return new UserModel() { RESPONSE_STATUS = EnumService.StatusConstants.NotFound, RESPONSE_MESSAGE = "Email/Password combination incorrect. Please Try again" };
             }
         }
 
