@@ -6,7 +6,7 @@ using System.ComponentModel;
 
 namespace school_management_app.Models
 {
-    public class StudentModel
+    public class StudentModel : ResponseModel
     { 
         public int STUDENT_ID { get; set; }
         public int USER_ID { get; set; }
@@ -16,7 +16,7 @@ namespace school_management_app.Models
         public string STATUS { get; set; } = "ACTIVE";
     }
 
-    public class StudentInfo
+    public class StudentInfo : ResponseModel
     {
         public string FIRST_NAME { get; set; }
         public string LAST_NAME { get; set; }
@@ -26,7 +26,7 @@ namespace school_management_app.Models
         public string STATUS { get; set; }
     }
 
-    public class StudentClassInfo
+    public class StudentClassInfo : ResponseModel
     {
         [Display(Name = "SUBJECT NAME")]
         public String SUBJECT_NAME { get; set; }

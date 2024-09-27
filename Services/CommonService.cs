@@ -113,28 +113,5 @@ namespace school_management_app.Services
                 }
             }
         }
-
-        public String GenerateUserGreeting(UserModel user)
-        {
-            StringBuilder sb = new StringBuilder();
-
-            int hour = DateTime.Now.Hour;
-
-            string greeting;
-            if (hour < 12)
-            {
-                greeting = "GOOD MORNING";
-            }
-            else if (hour < 17)
-            {
-                greeting = "GOOD AFTERNOON";
-            }
-            else
-            {
-                greeting = "GOOD EVENING";
-            }
-
-            return $"{greeting}, {user.FIRST_NAME} {user.LAST_NAME}!";
-        }
     }
 }

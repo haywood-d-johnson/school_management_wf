@@ -64,9 +64,7 @@ namespace school_management_app.Services
 
             String queryString = "SELECT * FROM SCHOOLMANAGEMENT.STUDENTS STU WHERE STU.USER_ID = '{0}'";
 
-            String query = String.Format(queryString, user.USER_ID);
-
-            List<StudentModel> ResStudentList = _dataSource.ExecuteQueryAndConvertToList<StudentModel>(query);
+            List<StudentModel> ResStudentList = _dataSource.ExecuteQueryAndConvertToList<StudentModel>(String.Format(queryString, user.USER_ID));
             
             return ResStudentList.FirstOrDefault();
         }

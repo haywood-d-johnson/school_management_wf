@@ -54,9 +54,9 @@ namespace school_management_app.Views
 
             var ReturnedUser = _userService.ValidateUserByEmailAndPassword(user);
 
-            if (ReturnedUser.STATUS == EnumService.StatusConstants.NotFound)
+            if (ReturnedUser.RESPONSE_STATUS == EnumService.StatusConstants.NotFound)
             {
-                MessageBox.Show(ReturnedUser.MESSAGE, ReturnedUser.STATUS, MessageBoxButtons.OK);
+                MessageBox.Show(ReturnedUser.RESPONSE_MESSAGE, ReturnedUser.RESPONSE_STATUS, MessageBoxButtons.OK);
 
                 tbxLoginEmail.Text = String.Empty;
                 tbxLoginPassword.Text = String.Empty;

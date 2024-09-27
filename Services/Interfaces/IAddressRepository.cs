@@ -10,5 +10,6 @@ namespace school_management_app.Services.Interfaces
     public interface IAddressRepository
     {
         AddressModel GetAddressInfoFromAddressId(UserModel user);
+        AddressModel ValidateAddressModelForStudents(AddressModel address);
     }
 }

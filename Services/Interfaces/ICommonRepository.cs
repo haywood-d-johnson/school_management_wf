@@ -13,6 +13,5 @@ namespace school_management_app.Services.Interfaces
         DataTable ConvertListToDataTable<T>(List<T> list);
         String Encrypt(string plainText);
         String Decrypt(string cipherText);
-        String GenerateUserGreeting(UserModel user);
     }
 }

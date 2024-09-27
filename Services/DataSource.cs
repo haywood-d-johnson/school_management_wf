@@ -69,9 +69,12 @@ namespace school_management_app.Services
             {
                 using (MySqlCommand command = new MySqlCommand(query, _connection))
                 {
-                    _connection.Open();
-                    using (MySqlDataReader reader = command.ExecuteReader())
+                    if (_connection.State != ConnectionState.Open)
+                    {
+                        _connection.Open();
+                    }
 
+                    using (MySqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {

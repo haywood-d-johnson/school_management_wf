@@ -7,7 +7,7 @@ using System.Xml;
 
 namespace school_management_app.Models
 {
-    public class AddressModel
+    public class AddressModel : ResponseModel
     {
         public int ADDRESS_ID { get; set; }
         public String STREET { get; set; }

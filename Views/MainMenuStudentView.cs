@@ -40,7 +40,7 @@ namespace school_management_app.Views
             lblUserName.Text = String.Empty;
             lblUStatus.Text = String.Empty;
 
-            lblUserName.Text = _commonService.GenerateUserGreeting(_userModel);
+            lblUserName.Text = _userService.GenerateUserGreeting(_userModel);
             lblUStatus.Text = _userModel.ROLES;
         }
 
