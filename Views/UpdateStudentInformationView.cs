@@ -19,8 +19,10 @@ namespace school_management_app.Views
         private readonly IUserRepository _userService;
         private DataSource _dataSource;
 
-        String updateUserQueryForStudents = "UPDATE SCHOOLMANAGEMENT.USERS u SET u.EMAIL = '{0}', u.PHONE_NUMBER = '{1}', u.PASSWORD_HASH = '{2}' WHERE u.USER_ID = {3}";
+        String updateUserQueryForStudents = "UPDATE SCHOOLMANAGEMENT.USERS u SET u.EMAIL = '{0}', u.PHONE_NUMBER = '{1}' WHERE u.USER_ID = {2}";
         String updateAddressQueryForStudents = "UPDATE SCHOOLMANAGEMENT.ADDRESSES a SET a.STREET = '{0}', a.CITY = '{1}', a.STATE = '{2}', a.COUNTRY = '{3}' WHERE a.ADDRESS_ID = '{4}'";
+        String updatePwdForStudents = "UPDATE SCHOOLMANAGEMENT.USERS u SET u.PASSWORD_HASH = '{0}' WHERE u.USER_ID = '{1}'";
+
         public UpdateStudentInformationView(UserModel user, StudentModel studentModel)
         {
             InitializeComponent();
@@ -43,8 +45,6 @@ namespace school_management_app.Views
             lblStudentID.Text = _studentModel.STUDENT_ID.ToString();
             lblDOB.Text = _userService.FormatDateToString(_userModel.DATE_OF_BIRTH);
             lblStatus.Text = _studentModel.STATUS.ToString();
-
-            btnSave.Visible = false;
 
             SetInformation();
         }
@@ -79,9 +79,9 @@ namespace school_management_app.Views
 
             if (result == DialogResult.OK)
             {
-                bool allTextBoxesEmpty = Controls.OfType<TextBox>().All(t => String.IsNullOrEmpty(t.Text));
+                bool allTextBoxesEmpty = Controls.OfType<TextBox>().Any(t => String.IsNullOrEmpty(t.Text));
 
-                if (!allTextBoxesEmpty)
+                if (allTextBoxesEmpty)
                 {
                     tbxPhoneNum.Text = String.IsNullOrEmpty(tbxPhoneNum.Text) ? _userService.FormatPhoneNumber(_userModel.PHONE_NUMBER.ToString()) : tbxPhoneNum.Text;
                     tbxCountry.Text = String.IsNullOrEmpty(tbxCountry.Text) ? _addressModel.COUNTRY.ToString() : tbxCountry.Text;
@@ -89,12 +89,11 @@ namespace school_management_app.Views
                     tbxCity.Text = String.IsNullOrEmpty(tbxCity.Text) ? _addressModel.CITY.ToString() : tbxCity.Text;
                     tbxState.Text = String.IsNullOrEmpty(tbxState.Text) ? _addressModel.STATE.ToString() : tbxState.Text;
                     tbxEmail.Text = String.IsNullOrEmpty(tbxEmail.Text) ? _userModel.EMAIL.ToString() : tbxEmail.Text;
-                    tbxPwd.Text = String.IsNullOrEmpty(tbxPwd.Text) ? _commonService.Decrypt(_userModel.PASSWORD_HASH.ToString()) : tbxPwd.Text;
                 }
 
                 bool validateUserModelUpdates = false, validateAddressModelUpdates = false;
 
-                UserModel ValidateUserUpdateInfo = _userService.ValidateUpdateInfoForStudents(new UserModel() { EMAIL = tbxEmail.Text, PHONE_NUMBER = tbxPhoneNum.Text, PASSWORD_HASH = tbxPwd.Text });
+                UserModel ValidateUserUpdateInfo = _userService.ValidateUpdateInfoForStudents(new UserModel() { EMAIL = tbxEmail.Text, PHONE_NUMBER = tbxPhoneNum.Text });
                 if (ValidateUserUpdateInfo.RESPONSE_STATUS == EnumService.StatusConstants.Success) 
                 {
                     validateUserModelUpdates = true;
@@ -114,7 +113,7 @@ namespace school_management_app.Views
                 if (validateUserModelUpdates && validateAddressModelUpdates)
                 {
                     // Update User Model and retreive
-                    _dataSource.ExecuteQuery<UserModel>(String.Format(updateUserQueryForStudents, ValidateUserUpdateInfo.EMAIL, _userService.UnformatPhoneNumber(ValidateUserUpdateInfo.PHONE_NUMBER), _commonService.Encrypt(_userModel.PASSWORD_HASH), _userModel.USER_ID));
+                    _dataSource.ExecuteQuery<UserModel>(String.Format(updateUserQueryForStudents, ValidateUserUpdateInfo.EMAIL, _userService.UnformatPhoneNumber(ValidateUserUpdateInfo.PHONE_NUMBER), _userModel.USER_ID));
                     _userModel = _userService.GetById(_userModel.USER_ID);
 
                     // Update address model and retreive
@@ -154,6 +153,54 @@ namespace school_management_app.Views
             tbxCity.Enabled = false;
             tbxState.Text = _addressModel.STATE.ToString();
             tbxState.Enabled = false;
+
+            tbxPwd.Visible = false;
+            tbxPwd.Text = String.Empty;
+
+            tbxVPwd.Visible = false;
+            tbxVPwd.Text = String.Empty;
+
+            lblPwdLabel.Visible = false;
+            lblVPwdLabel.Visible = false;
+
+            btnSave.Visible = false;
+            btnEdit.Visible = true;
+            btnEdit.Enabled = true;
+            btnSavePwd.Visible = false;
+            btnPassword.Visible = true;
+        }
+
+        private void btnPassword_Click(object sender, EventArgs e)
+        {
+            btnEdit.Enabled = false;
+            btnSavePwd.Visible = true;
+            btnPassword.Visible = false;
+
+            tbxPwd.Visible = true;
+            tbxVPwd.Visible = true;
+            lblPwdLabel.Visible = true;
+            lblVPwdLabel.Visible = true;
+        }
+
+        private void btnSavePwd_Click(object sender, EventArgs e)
+        {
+            if (tbxPwd.Text != tbxVPwd.Text)
+            {
+                MessageBox.Show("Password Mismatch. Please try again.", EnumService.StatusConstants.Error, MessageBoxButtons.OK);
+                SetInformation();
+            }
+            else if (String.IsNullOrEmpty(tbxPwd.Text) || String.IsNullOrEmpty(tbxVPwd.Text))
+            {
+                SetInformation();
+            }
+            else
+            {
+                String hash = _commonService.HashPassword(tbxPwd.Text);
+                _dataSource.ExecuteQuery<UserModel>(String.Format(updatePwdForStudents, _commonService.HashPassword(tbxPwd.Text), _userModel.USER_ID));
+
+                MessageBox.Show("Password changed successfully!", EnumService.StatusConstants.Success, MessageBoxButtons.OK);
+                SetInformation();
+            }
         }
     }
 }

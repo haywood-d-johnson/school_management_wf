@@ -46,7 +46,8 @@ namespace school_management_app.Views
             StudentClassesDGV.Columns[2].HeaderCell.Value = "GRADE";
             StudentClassesDGV.Columns[3].HeaderCell.Value = "ROOM NUMBER";
             StudentClassesDGV.Columns[4].HeaderCell.Value = "CLASS ALLOCATION DATE";
-
+            StudentClassesDGV.Columns[5].Visible = false;
+            StudentClassesDGV.Columns[6].Visible = false;
         }
     }
 }

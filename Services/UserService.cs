@@ -108,9 +108,9 @@ namespace school_management_app.Services
         public UserModel ValidateUpdateInfoForStudents(UserModel user)
         {
             bool validateEmail = IsValidEmail(user.EMAIL);
-            if (!validateEmail && !IsValidPhoneNumber(user.PHONE_NUMBER))
+            if (!validateEmail || !IsValidPhoneNumber(user.PHONE_NUMBER))
             {
-                return new UserModel() { RESPONSE_STATUS = EnumService.StatusConstants.Error, RESPONSE_MESSAGE = "Invalid email format" };
+                return new UserModel() { RESPONSE_STATUS = EnumService.StatusConstants.Error, RESPONSE_MESSAGE = "Invalid email/phone format" };
             }
             else 
             {

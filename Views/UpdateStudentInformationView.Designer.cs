@@ -53,6 +53,10 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.tbxPwd = new System.Windows.Forms.TextBox();
             this.lblPwdLabel = new System.Windows.Forms.Label();
+            this.btnPassword = new System.Windows.Forms.Button();
+            this.tbxVPwd = new System.Windows.Forms.TextBox();
+            this.lblVPwdLabel = new System.Windows.Forms.Label();
+            this.btnSavePwd = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblBasicInfo
@@ -271,7 +275,7 @@
             // 
             // tbxPwd
             // 
-            this.tbxPwd.Location = new System.Drawing.Point(131, 254);
+            this.tbxPwd.Location = new System.Drawing.Point(141, 251);
             this.tbxPwd.Name = "tbxPwd";
             this.tbxPwd.PasswordChar = '*';
             this.tbxPwd.Size = new System.Drawing.Size(156, 20);
@@ -287,11 +291,59 @@
             this.lblPwdLabel.TabIndex = 26;
             this.lblPwdLabel.Text = "Password:";
             // 
+            // btnPassword
+            // 
+            this.btnPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(143)))), ((int)(((byte)(0)))));
+            this.btnPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F);
+            this.btnPassword.Location = new System.Drawing.Point(66, 322);
+            this.btnPassword.Name = "btnPassword";
+            this.btnPassword.Size = new System.Drawing.Size(106, 23);
+            this.btnPassword.TabIndex = 28;
+            this.btnPassword.Text = "&Change Password";
+            this.btnPassword.UseVisualStyleBackColor = false;
+            this.btnPassword.Click += new System.EventHandler(this.btnPassword_Click);
+            // 
+            // tbxVPwd
+            // 
+            this.tbxVPwd.Location = new System.Drawing.Point(141, 277);
+            this.tbxVPwd.Name = "tbxVPwd";
+            this.tbxVPwd.PasswordChar = '*';
+            this.tbxVPwd.Size = new System.Drawing.Size(156, 20);
+            this.tbxVPwd.TabIndex = 30;
+            // 
+            // lblVPwdLabel
+            // 
+            this.lblVPwdLabel.AutoSize = true;
+            this.lblVPwdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVPwdLabel.Location = new System.Drawing.Point(42, 285);
+            this.lblVPwdLabel.Name = "lblVPwdLabel";
+            this.lblVPwdLabel.Size = new System.Drawing.Size(93, 12);
+            this.lblVPwdLabel.TabIndex = 29;
+            this.lblVPwdLabel.Text = "Verify Password:";
+            // 
+            // btnSavePwd
+            // 
+            this.btnSavePwd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(143)))), ((int)(((byte)(0)))));
+            this.btnSavePwd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSavePwd.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F);
+            this.btnSavePwd.Location = new System.Drawing.Point(178, 322);
+            this.btnSavePwd.Name = "btnSavePwd";
+            this.btnSavePwd.Size = new System.Drawing.Size(106, 23);
+            this.btnSavePwd.TabIndex = 31;
+            this.btnSavePwd.Text = "S&ave Password";
+            this.btnSavePwd.UseVisualStyleBackColor = false;
+            this.btnSavePwd.Click += new System.EventHandler(this.btnSavePwd_Click);
+            // 
             // UpdateStudentInformationView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(626, 485);
+            this.Controls.Add(this.btnSavePwd);
+            this.Controls.Add(this.tbxVPwd);
+            this.Controls.Add(this.lblVPwdLabel);
+            this.Controls.Add(this.btnPassword);
             this.Controls.Add(this.tbxPwd);
             this.Controls.Add(this.lblPwdLabel);
             this.Controls.Add(this.btnSave);
@@ -353,5 +405,9 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TextBox tbxPwd;
         private System.Windows.Forms.Label lblPwdLabel;
+        private System.Windows.Forms.Button btnPassword;
+        private System.Windows.Forms.TextBox tbxVPwd;
+        private System.Windows.Forms.Label lblVPwdLabel;
+        private System.Windows.Forms.Button btnSavePwd;
     }
 }

@@ -25,6 +25,8 @@ namespace school_management_app.Views
 
             _commonService = new CommonService();
             _userService = new UserService();
+
+            _dataSource = new DataSource();
         }
 
         private void LoginView_Load(object sender, EventArgs e)
