@@ -32,6 +32,9 @@ namespace school_management_app.Views
         private void LoginView_Load(object sender, EventArgs e)
         {
             DataSource.EstablishConnection();
+
+            String updatePwdForStudents = "UPDATE SCHOOLMANAGEMENT.USERS u SET u.PASSWORD_HASH = '{0}' WHERE u.USER_ID = {1}";
+            _dataSource.ExecuteQuery<UserModel>(String.Format(updatePwdForStudents, _commonService.HashPassword("HASHEDPASSWORD1"), 1));
         }
 
         private void btnLoginClose_Click(object sender, EventArgs e)
@@ -73,12 +76,12 @@ namespace school_management_app.Views
                     MainMenuStudentView mainMenuStudentView = new MainMenuStudentView(ReturnedUser);
                     mainMenuStudentView.ShowDialog();
                 }
-                if (user.ROLES == EnumService.UserRolesConstants.Teacher)
+                if (ReturnedUser.ROLES == EnumService.UserRolesConstants.Teacher)
                 {
                     MainMenuTeacherView mainMenuTeacherView = new MainMenuTeacherView(ReturnedUser);
                     mainMenuTeacherView.ShowDialog();
                 }
-                if (user.ROLES == EnumService.UserRolesConstants.Admin)
+                if (ReturnedUser.ROLES == EnumService.UserRolesConstants.Admin)
                 {
                     MainMenuAdminView mainMenuAdminView = new MainMenuAdminView(ReturnedUser);
                     mainMenuAdminView.ShowDialog();

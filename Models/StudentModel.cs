@@ -1,13 +1,11 @@
 using System;
-using System.Data.Entity;
-using System.Linq;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel;
+using System.Collections.Generic;
 
 namespace school_management_app.Models
 {
     public class StudentModel : ResponseModel
-    { 
+    {
         public int STUDENT_ID { get; set; }
         public int USER_ID { get; set; }
         public int CLASS_YEAR { get; set; }
@@ -39,4 +37,20 @@ namespace school_management_app.Models
         [Display(Name = "CLASS ALLOCATION DATE")]
         public DateTime ALLOCATION_DATE { get; set; }
     }
+
+    #region GET LIST OF ACTIVE STUDENTS
+
+    public class ActiveStudent
+    {
+        public int STUDENT_ID { get; set; }
+        public String FIRST_NAME { get; set; }
+        public String LAST_NAME { get; set; }
+    }
+
+    public class ActiveStudents : ResponseModel
+    {
+        public List<ActiveStudent> ActiveStudentsList;
+    }
+
+    #endregion
 }

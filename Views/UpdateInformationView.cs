@@ -8,11 +8,13 @@ using System.Windows.Forms;
 
 namespace school_management_app.Views
 {
-    public partial class UpdateStudentInformationView : Form
+    public partial class UpdateInformationView : Form
     {
         private UserModel _userModel;
         private readonly StudentModel _studentModel;
+        private readonly TeacherModel _teacherModel;
         private AddressModel _addressModel;
+        
 
         private readonly IAddressRepository _addressService;
         private readonly ICommonRepository _commonService;
@@ -23,12 +25,13 @@ namespace school_management_app.Views
         String updateAddressQueryForStudents = "UPDATE SCHOOLMANAGEMENT.ADDRESSES a SET a.STREET = '{0}', a.CITY = '{1}', a.STATE = '{2}', a.COUNTRY = '{3}' WHERE a.ADDRESS_ID = '{4}'";
         String updatePwdForStudents = "UPDATE SCHOOLMANAGEMENT.USERS u SET u.PASSWORD_HASH = '{0}' WHERE u.USER_ID = '{1}'";
 
-        public UpdateStudentInformationView(UserModel user, StudentModel studentModel)
+        public UpdateInformationView(UserModel user, StudentModel studentModel, TeacherModel teacherModel)
         {
             InitializeComponent();
 
             _userModel = user;
-            _studentModel = studentModel;
+            _studentModel = _userModel.ROLES == EnumService.UserRolesConstants.Student ?  studentModel : null;
+            _teacherModel = _userModel.ROLES == EnumService.UserRolesConstants.Teacher ? teacherModel : null;
             
             _addressService = new AddressService();
             _commonService = new CommonService();
@@ -42,9 +45,10 @@ namespace school_management_app.Views
             _addressModel = _addressService.GetAddressInfoFromAddressId(_userModel);
 
             lblName.Text = $"{_userModel.FIRST_NAME} {_userModel.LAST_NAME}";
-            lblStudentID.Text = _studentModel.STUDENT_ID.ToString();
+            lblIDLabel.Text = _userModel.ROLES == EnumService.UserRolesConstants.Student ? "Student ID:" : "Teacher ID:";
+            lblID.Text = _userModel.ROLES == EnumService.UserRolesConstants.Student ? _studentModel.STUDENT_ID.ToString() : _teacherModel.TEACHER_ID.ToString();
             lblDOB.Text = _userService.FormatDateToString(_userModel.DATE_OF_BIRTH);
-            lblStatus.Text = _studentModel.STATUS.ToString();
+            lblStatus.Text = _userModel.ROLES == EnumService.UserRolesConstants.Student ? _studentModel.STATUS.ToString() : _teacherModel.STATUS.ToString();
 
             SetInformation();
         }
@@ -70,6 +74,7 @@ namespace school_management_app.Views
 
                 btnEdit.Visible = false;
                 btnSave.Visible = true;
+                btnPassword.Enabled = false;
             }
         }
 
@@ -168,6 +173,7 @@ namespace school_management_app.Views
             btnEdit.Enabled = true;
             btnSavePwd.Visible = false;
             btnPassword.Visible = true;
+            btnPassword.Enabled = true;
         }
 
         private void btnPassword_Click(object sender, EventArgs e)

@@ -22,5 +22,14 @@ namespace school_management_app.Services
             public static String Admin = "ADMINISTRATOR";
             public static String Teacher = "TEACHER";
         }
+
+        public static class UserStatusConstants 
+        {
+            public static String Active = "ACTIVE";
+            public static String Graduated = "GRADUATED";
+            public static String Withdrawn = "WITHDRAWN";
+            public static String Inactive = "INACTIVE";
+            public static String Retired = "RETIRED";
+        }
     }
 }

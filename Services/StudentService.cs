@@ -31,13 +31,20 @@ namespace school_management_app.Services
 
         public List<StudentModel> FindAll()
         {
-            throw new NotImplementedException();
+            String query = "SELECT * FROM SCHOOLMANAGEMENT.STUDENTS s";
 
+            List<StudentModel> studentList = _dataSource.ExecuteQueryAndConvertToList<StudentModel>(query);
+
+            return studentList;
         }
 
         public StudentModel FindOne(StudentModel student)
         {
-            throw new NotImplementedException();
+            String query = $"SELECT * FROM SCHOOLMANAGEMENT.STUDENTS s WHERE s.STUDENT_ID = {student.STUDENT_ID}";
+
+            List<StudentModel> StudentList = _dataSource.ExecuteQueryAndConvertToList<StudentModel>(query);
+
+            return StudentList.FirstOrDefault();
         }
 
         public List<StudentInfo> ShowStudentInfo()
@@ -48,7 +55,6 @@ namespace school_management_app.Services
                 "FROM SCHOOLMANAGEMENT.STUDENTS LEFT JOIN SCHOOLMANAGEMENT.USERS ON SCHOOLMANAGEMENT.USERS.USER_ID = SCHOOLMANAGEMENT.STUDENTS.USER_ID";
 
             List<StudentInfo> StudentList = _dataSource.ExecuteQueryAndConvertToList<StudentInfo>(query);
-            Console.WriteLine(StudentList);
 
             return StudentList;
         }
@@ -84,6 +90,31 @@ namespace school_management_app.Services
             List<StudentClassInfo> ResClassInfo = _dataSource.ExecuteQueryAndConvertToList<StudentClassInfo>(queryString.ToString());
 
             return ResClassInfo;
+        }
+
+        public ActiveStudents GetActiveStudentsByTeacterID(int teacherID)
+        {
+            StringBuilder queryString = new StringBuilder();
+            queryString.Append("SELECT s.STUDENT_ID, u.FIRST_NAME, u.LAST_NAME FROM SCHOOLMANAGEMENT.CLASSROOM_ALLOCATION ca ");
+            queryString.Append("JOIN SCHOOLMANAGEMENT.STUDENTS s ON s.STUDENT_ID = ca.STUDENT_ID JOIN SCHOOLMANAGEMENT.USERS u ON u.USER_ID = s.USER_ID ");
+            queryString.Append($"JOIN SCHOOLMANAGEMENT.CLASSROOM c ON c.CLASSROOM_ID = ca.CLASSROOM_ID WHERE u.USTATUS = '{EnumService.UserStatusConstants.Active}' ");
+            queryString.Append($"AND u.ROLES = '{EnumService.UserRolesConstants.Student}' AND c.ASSIGNED_TEACHER_ID = {teacherID}");
+
+            List<ActiveStudent> activeStudents = _dataSource.ExecuteQueryAndConvertToList<ActiveStudent>(queryString.ToString());
+
+            if (activeStudents != null && activeStudents.Count > 0) 
+            { 
+                return new ActiveStudents() 
+                { 
+                    RESPONSE_STATUS = EnumService.StatusConstants.Found,  
+                    RESPONSE_MESSAGE = EnumService.StatusConstants.Found,
+                    ActiveStudentsList = activeStudents
+                };
+            }
+            else 
+            { 
+                return new ActiveStudents() { RESPONSE_STATUS = EnumService.StatusConstants.NotFound, RESPONSE_MESSAGE = "No students found for current teacher. Please contact administration if this is an error."};
+            }
         }
     }
 }

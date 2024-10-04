@@ -291,9 +291,15 @@
     <Compile Include="Services\EnumService.cs" />
     <Compile Include="Services\Interfaces\IAddressRepository.cs" />
     <Compile Include="Services\Interfaces\ICommonRepository.cs" />
+    <Compile Include="Services\Interfaces\IStudentPerformanceRepository.cs" />
     <Compile Include="Services\Interfaces\IStudentRepository.cs" />
+    <Compile Include="Services\Interfaces\ISubjectsRepository.cs" />
+    <Compile Include="Services\Interfaces\ITeacherRepository.cs" />
     <Compile Include="Services\Interfaces\IUserRepository.cs" />
+    <Compile Include="Services\StudentPerformanceService.cs" />
     <Compile Include="Services\StudentService.cs" />
+    <Compile Include="Services\SubjectService.cs" />
+    <Compile Include="Services\TeacherService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Views\LoginView.cs">
       <SubType>Form</SubType>
@@ -319,6 +325,12 @@
     <Compile Include="Views\MainMenuTeacherView.Designer.cs">
       <DependentUpon>MainMenuTeacherView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\SingleStudentTeacherView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SingleStudentTeacherView.Designer.cs">
+      <DependentUpon>SingleStudentTeacherView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\StudentClassView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -331,11 +343,11 @@
     <Compile Include="Views\StudentView.Designer.cs">
       <DependentUpon>StudentView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\UpdateStudentInformationView.cs">
+    <Compile Include="Views\UpdateInformationView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\UpdateStudentInformationView.Designer.cs">
-      <DependentUpon>UpdateStudentInformationView.cs</DependentUpon>
+    <Compile Include="Views\UpdateInformationView.Designer.cs">
+      <DependentUpon>UpdateInformationView.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -355,14 +367,17 @@
     <EmbeddedResource Include="Views\MainMenuTeacherView.resx">
       <DependentUpon>MainMenuTeacherView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\SingleStudentTeacherView.resx">
+      <DependentUpon>SingleStudentTeacherView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\StudentClassView.resx">
       <DependentUpon>StudentClassView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\StudentView.resx">
       <DependentUpon>StudentView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\UpdateStudentInformationView.resx">
-      <DependentUpon>UpdateStudentInformationView.cs</DependentUpon>
+    <EmbeddedResource Include="Views\UpdateInformationView.resx">
+      <DependentUpon>UpdateInformationView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\school_management_app.Models.StudentModel.datasource" />

@@ -62,7 +62,7 @@ namespace school_management_app.Views
             if (this.pnlFormView.Controls.Count > 0)
                 this.pnlFormView.Controls.RemoveAt(0);
 
-            UpdateStudentInformationView updateStudentInformationView = new UpdateStudentInformationView(_userModel, _studentModel);
+            UpdateInformationView updateStudentInformationView = new UpdateInformationView(_userModel, _studentModel, null);
 
             updateStudentInformationView.TopLevel = false;
             updateStudentInformationView.AutoScroll = true;

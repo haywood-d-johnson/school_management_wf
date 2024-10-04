@@ -39,6 +39,7 @@
             this.StudentClassesDGV.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.StudentClassesDGV.Location = new System.Drawing.Point(0, 139);
             this.StudentClassesDGV.Name = "StudentClassesDGV";
+            this.StudentClassesDGV.ReadOnly = true;
             this.StudentClassesDGV.RowHeadersVisible = false;
             this.StudentClassesDGV.Size = new System.Drawing.Size(626, 346);
             this.StudentClassesDGV.TabIndex = 1;

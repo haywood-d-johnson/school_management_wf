@@ -15,5 +15,8 @@ namespace school_management_app.Models
         public int EXAM_DATE { get; set; }
     }
 
-
+    public class StudentPerformanceModelList : ResponseModel
+    {
+        public List<StudentPerformanceModel> studentPerformanceList;
+    }
 }

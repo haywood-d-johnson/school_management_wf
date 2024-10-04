@@ -17,5 +17,6 @@ namespace school_management_app.Services
         void Delete(StudentModel student);
         StudentModel GetStudentModelFromUserID(UserModel user);
         List<StudentClassInfo> GetStudentClassInfo(StudentModel student);
+        ActiveStudents GetActiveStudentsByTeacterID(int teacherID);
     }
 }

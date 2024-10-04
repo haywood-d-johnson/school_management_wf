@@ -6,6 +6,7 @@ using System.Data;
 using System.Windows;
 using System.Configuration;
 using school_management_app.Services.Interfaces;
+using System.Text.RegularExpressions;
 
 namespace school_management_app.Services
 {
@@ -107,15 +108,16 @@ namespace school_management_app.Services
 
         public List<T> ExecuteQueryAndConvertToList<T>(string query, Func<IDataRecord, T> rowMapper = null) where T : class
         {
+            string trimmedString = Regex.Replace(query, @"^\s+|\s+$", "");
+
             List<T> result = new List<T>();
 
             if (_connection.State !=  ConnectionState.Open)
             {
                 _connection.Open();
-
             }
 
-            using (MySqlCommand command = new MySqlCommand(query, _connection))
+            using (MySqlCommand command = new MySqlCommand(trimmedString, _connection))
             {
                 using (MySqlDataReader reader = command.ExecuteReader())
                 {

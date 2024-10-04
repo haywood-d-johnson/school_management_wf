@@ -1,6 +1,6 @@
 ﻿namespace school_management_app.Views
 {
-    partial class UpdateStudentInformationView
+    partial class UpdateInformationView
     {
         /// <summary>
         /// Required designer variable.
@@ -31,8 +31,8 @@
             this.lblBasicInfo = new System.Windows.Forms.Label();
             this.lblNameLabel = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.lblStudentID = new System.Windows.Forms.Label();
-            this.lblStudentIDLabel = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
+            this.lblIDLabel = new System.Windows.Forms.Label();
             this.lblDOB = new System.Windows.Forms.Label();
             this.lblDOBLabel = new System.Windows.Forms.Label();
             this.lblPhoneLabel = new System.Windows.Forms.Label();
@@ -88,24 +88,24 @@
             this.lblName.TabIndex = 2;
             this.lblName.Text = "label1";
             // 
-            // lblStudentID
+            // lblID
             // 
-            this.lblStudentID.AutoSize = true;
-            this.lblStudentID.Location = new System.Drawing.Point(111, 103);
-            this.lblStudentID.Name = "lblStudentID";
-            this.lblStudentID.Size = new System.Drawing.Size(35, 13);
-            this.lblStudentID.TabIndex = 4;
-            this.lblStudentID.Text = "label1";
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(111, 103);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(35, 13);
+            this.lblID.TabIndex = 4;
+            this.lblID.Text = "label1";
             // 
-            // lblStudentIDLabel
+            // lblIDLabel
             // 
-            this.lblStudentIDLabel.AutoSize = true;
-            this.lblStudentIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStudentIDLabel.Location = new System.Drawing.Point(42, 104);
-            this.lblStudentIDLabel.Name = "lblStudentIDLabel";
-            this.lblStudentIDLabel.Size = new System.Drawing.Size(63, 12);
-            this.lblStudentIDLabel.TabIndex = 3;
-            this.lblStudentIDLabel.Text = "Student ID:";
+            this.lblIDLabel.AutoSize = true;
+            this.lblIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIDLabel.Location = new System.Drawing.Point(42, 104);
+            this.lblIDLabel.Name = "lblIDLabel";
+            this.lblIDLabel.Size = new System.Drawing.Size(63, 12);
+            this.lblIDLabel.TabIndex = 3;
+            this.lblIDLabel.Text = "Student ID:";
             // 
             // lblDOB
             // 
@@ -335,7 +335,7 @@
             this.btnSavePwd.UseVisualStyleBackColor = false;
             this.btnSavePwd.Click += new System.EventHandler(this.btnSavePwd_Click);
             // 
-            // UpdateStudentInformationView
+            // UpdateInformationView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -364,13 +364,13 @@
             this.Controls.Add(this.lblPhoneLabel);
             this.Controls.Add(this.lblDOB);
             this.Controls.Add(this.lblDOBLabel);
-            this.Controls.Add(this.lblStudentID);
-            this.Controls.Add(this.lblStudentIDLabel);
+            this.Controls.Add(this.lblID);
+            this.Controls.Add(this.lblIDLabel);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblNameLabel);
             this.Controls.Add(this.lblBasicInfo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "UpdateStudentInformationView";
+            this.Name = "UpdateInformationView";
             this.Text = "UpdateStudentInformationView";
             this.Load += new System.EventHandler(this.UpdateStudentInformationView_Load);
             this.ResumeLayout(false);
@@ -383,8 +383,8 @@
         private System.Windows.Forms.Label lblBasicInfo;
         private System.Windows.Forms.Label lblNameLabel;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Label lblStudentID;
-        private System.Windows.Forms.Label lblStudentIDLabel;
+        private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.Label lblIDLabel;
         private System.Windows.Forms.Label lblDOB;
         private System.Windows.Forms.Label lblDOBLabel;
         private System.Windows.Forms.Label lblPhoneLabel;
